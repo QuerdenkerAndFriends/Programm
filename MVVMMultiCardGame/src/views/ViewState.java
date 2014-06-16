@@ -1,0 +1,5 @@
+package views;
+
+public enum ViewState {
+	HAUPTMENU, SPIELBEITRETEN, SPIELERSTELLEN, SERVERLOBBY, CLIENTLOBBY
+}
