@@ -10,4 +10,3 @@ public class Main {
 		viewManager.setViewState(ViewState.HAUPTMENU);
 	}
 }
-//Hallo wer ist denn da

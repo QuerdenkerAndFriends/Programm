@@ -10,8 +10,8 @@ import network.*;
 public class MultiCardGameConnectionController implements ConnectionController{
 	
 	String[] ips = new String[]{"localhost"};
-	Server server = new Server(this, 4711);
-	Client client = new Client(this, ips, 4711);
+	Server server = new Server(this, 4711, "Hi I am a Server");
+	Client client = new Client(this, ips, 4711, "Hi I am a Client");
 	List<Connection> connections = new LinkedList<Connection>();
 	boolean searching = false;
 	

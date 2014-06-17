@@ -39,10 +39,11 @@ public class SpielInfo {
 		return spielName;
 	}
 	
+/*
 	public void setServerName(String serverName) {
 		this.spielName = serverName;
 	}
-/*
+
 	public String getClientName() {
 		return clientName;
 	}

@@ -86,7 +86,7 @@ public class SpielBeitretenView{
 		for (int i = 0; i<offeneSpiele.size(); i++){
 			Spiel spiel = offeneSpiele.get(i);
 			pTable.add(new JLabel(spiel.getInfo().getSpielName()));
-			pTable.add(new JLabel(spiel.getInfo().getServerName()));
+			pTable.add(new JLabel(spiel.getInfo().getGegnerName()));
 			JButton bBeitreten = new JButton("Beitreten");
 			bBeitreten.addActionListener(new BeitretenActionListener(offeneSpiele.get(i)));
 			pTable.add(bBeitreten);	
@@ -105,7 +105,7 @@ public class SpielBeitretenView{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try{
-				spiel.getInfo().setClientName(tfSpielername.getText());
+				spiel.getInfo().setSpielerName(tfSpielername.getText());
 				if (viewModel.spielBeitreten(spiel)){
 					frame.setVisible(false);
 				}

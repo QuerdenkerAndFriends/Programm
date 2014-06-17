@@ -7,11 +7,13 @@ import java.util.*;
 public class Server extends Thread{
 	private boolean open = false;
 	private ServerSocket server;
+	private String greeting;
 	private ConnectionController controller;
 	private List<Connection> cons = new LinkedList<Connection>();
 	
-	public Server(ConnectionController controller, int portNr)
+	public Server(ConnectionController controller, int portNr, String greeting)
 	{
+		this.greeting = greeting;
 		this.controller=controller;
 		try {
 			server =  new ServerSocket(portNr);
@@ -27,7 +29,7 @@ public class Server extends Thread{
 			try {
 				Socket socket = server.accept();
 				if (socket.isConnected()) {
-					Connection con = new Connection( controller, socket, "Hi I am a Server");
+					Connection con = new Connection( controller, socket, greeting);
 					cons.add (con);	
 				}	
 			} catch (IOException e) {

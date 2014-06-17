@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Client{
 	String[] ips;
+	String greeting;
 	int port;
 	ConnectionController controller;
 	List<Connection> connections = new LinkedList<Connection>();
@@ -15,24 +16,25 @@ public class Client{
 			Socket socket;
 			try {
 				socket = new Socket(ips[i], port);
-				Connection connection = new Connection(controller, socket, "Hi I am a Client");
+				Connection connection = new Connection(controller, socket, greeting);
 				connections.add(connection);
 			} catch (UnknownHostException e) {
-				// TODO Auto-generated catch block
+				
 				System.out.println("Fehler");
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 				System.out.println("Fehler");
 			}
 		}
 	}
 
-	public Client(ConnectionController controller, String[] ips, int port){
+	public Client(ConnectionController controller, String[] ips, int port, String greeting){
 		this.controller = controller;
 		this.ips = ips;
 		this.port = port;
+		this.greeting=greeting;
 	}	
 }
 

@@ -30,6 +30,10 @@ public class Connection extends Thread{
 		this.start();
 	}
 	
+	public void setMessenger(Messenger messenger){
+		this.messenger=messenger;
+	}
+	
 	public void send(String outcoming)
 	{
 		pwOut.println(outcoming);

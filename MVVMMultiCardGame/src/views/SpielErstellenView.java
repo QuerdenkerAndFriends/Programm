@@ -55,8 +55,7 @@ public class SpielErstellenView{
 		bServerOeffnen.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				viewModel.getSpiel().getInfo().setServerName(tfSpielerName.getText());
-				viewModel.getSpiel().getInfo().setSpielName(tfSpielName.getText());
+				viewModel.getSpiel().getInfo().setGegnerInfo(tfSpielName.getText(), tfSpielerName.getText());
 				frame.setVisible(false);
 				viewManager.setViewState(ViewState.SERVERLOBBY);	
 			}

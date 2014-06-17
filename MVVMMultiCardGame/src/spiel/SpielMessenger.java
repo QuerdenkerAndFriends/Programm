@@ -1,7 +1,5 @@
 package spiel;
 
-import karte.Karte;
-import karte.KartenGruppe;
 import network.*;
 
 public class SpielMessenger implements Messenger{
@@ -31,25 +29,27 @@ public class SpielMessenger implements Messenger{
 	}
 	
 	public void msgAuswerten(String msg){
-		String[] params = msg.split("[ ]");
-		switch(params[0]){ 
-			case "Angriff": 
-				spiel.getFeld().getGegnerSeite().angreifen(getGruppeById(params[1]), getGroupById(params[2]));
-			break;
-			case "ServerInfo":
-				spiel.getInfo().setGegnerInfo(params[1], params[2]);//spielName, GegnerName
-			break;
-			case "ClientInfo": 
-				spiel.getInfo().setGegnerInfo(params[1]);//GegnerName
-			break;
-			case "Legen":
-				KartenGruppe gruppe = new KartenGruppe();
-				for (int i = 1; i<params.length; i++){
-					gruppe.add(Karte.getKarteById(Integer.parseInt(params[i])));
-				}
-				spiel.getFeld().getGegnerSeite().legen(gruppe);
-			break;	
-		}
+//		
+//		String[] params = msg.split("[ ]");
+//		switch(params[0]){ 
+//			case "Angriff": 
+//				spiel.getFeld().getGegnerSeite().angreifen(getGruppeById(params[1]), getGroupById(params[2]));
+//			break;
+//			case "ServerInfo":
+//				spiel.getInfo().setGegnerInfo(params[1], params[2]);//spielName, GegnerName
+//			break;
+//			case "ClientInfo": 
+//				spiel.getInfo().setGegnerInfo(params[1]);//GegnerName
+//			break;
+//			case "Legen":
+//				KartenGruppe gruppe = new KartenGruppe();
+//				for (int i = 1; i<params.length; i++){
+//					gruppe.add(Karte.getKarteById(Integer.parseInt(params[i])));
+//				}
+//				spiel.getFeld().getGegnerSeite().legen(gruppe);
+//			break;	
+			
+//		}
 	}
 
 }
