@@ -15,7 +15,7 @@ public class Client{
 			Socket socket;
 			try {
 				socket = new Socket(ips[i], port);
-				Connection connection = new Connection(controller, socket, "Hi, I am a Client");
+				Connection connection = new Connection(controller, socket, "Hi I am a Client");
 				connections.add(connection);
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
